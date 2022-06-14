@@ -1,15 +1,21 @@
 {
   "name": "shortly",
+  "homepage": "https://tathagata1805.github.io/Shortly-Url-Shortnener",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export -o build && npm run replaceFilePaths",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "replaceFilePaths": "node replacer.js",
+    "export": "next export -o build && npm run replaceFilePaths",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "gh-pages": "^4.0.0",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
