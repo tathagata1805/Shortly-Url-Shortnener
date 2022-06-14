@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { RootStateOrAny, useSelector } from 'react-redux'
+import { RootState, useSelector } from 'react-redux'
 import { Container, Card } from '../../styles/components/results'
 import Shortener from '../Shortener'
 
@@ -9,7 +9,7 @@ interface Link {
 }
 
 const Results = () => {
-  const list: Link[] = useSelector((state: RootStateOrAny) => state.list)
+  const list: Link[] = useSelector((state: RootState) => state.list)
   const shortLink = useRef([])
   const [indexSelected, setIndexSelected] = useState<number>()
 

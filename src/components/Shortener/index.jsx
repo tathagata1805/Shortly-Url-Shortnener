@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import React, { FormEvent, useState } from 'react'
-import { Container } from '../../styles/components/shortener'
+import { Container } from '../../styles/components/shortener.js'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import ReactLoading from 'react-loading'
@@ -10,7 +10,7 @@ const Shortener = () => {
   const [loading, setLoading] = useState(false)
   const dispatch = useDispatch()
 
-  const shorten = (e: FormEvent<HTMLFormElement>) => {
+  const shorten = (e) => {
     e.preventDefault()
     setLoading(true)
     try {

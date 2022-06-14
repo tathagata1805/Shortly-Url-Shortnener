@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { Container, Popup } from '../../styles/components/menu'
 import menuIcon from '../../assets/menu.svg'
+import Image from 'next/image';
 
 const Menu = () => {
   const [showMenu, setShowMenu] = useState(false)
   return (
     <Container>
-      <img src={menuIcon} alt="" onClick={() => setShowMenu(!showMenu)} />
+      <Image src={menuIcon} alt="" onClick={() => setShowMenu(!showMenu)} />
       {showMenu && (
         <Popup>
           <a>Features</a>
